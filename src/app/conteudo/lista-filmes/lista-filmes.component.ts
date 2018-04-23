@@ -16,22 +16,12 @@ export class ListaFilmesComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.filmeService.getFilmes().subscribe(data => {
-      data['Search'].map(
-        filmes => {
-          let film = {
-            'id': filmes.imdbID,
-            'titulo':filmes.Title,
-            'ano':filmes.Year,
-            'tipo':filmes.Type,
-            'poster':filmes.Poster
-          }
-          this.listaFilmes.push(film);
-        })
-    });
   }
 
   apagaFilme(filme: Filme): void {
     this.listaFilmes = this.listaFilmes.filter(item => item.id != filme.id);
+  }
+  carregaLista(lista: Filme[]) {
+    this.listaFilmes = lista;
   }
 }

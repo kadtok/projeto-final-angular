@@ -3,6 +3,7 @@
   <p class="lead">
     Atividade - curso Angular
   </p>
+  <app-form-pesquisa (pesquisa)="carregaLista($event)" ></app-form-pesquisa>
   <hr class="my-4">
   <app-filme-card (apaga)="apagaFilme($event)" [filme]="filme" *ngFor="let filme of listaFilmes"></app-filme-card>
 </div>
